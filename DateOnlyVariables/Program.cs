@@ -1,4 +1,31 @@
-﻿
+﻿/*
+DateTime today = DateTime.Now;
 
 
+DateOnly birthday = DateOnly.Parse("20/04/1969");
 
+Console.WriteLine(birthday.ToString("MMMM dd, yyyy"));
+
+
+Console.WriteLine($"Today full format: {today}"); // Displays the full date and time
+Console.WriteLine($"Today just date: {today.Date}"); // Shows that .Date also includes the time component set to midnight
+Console.WriteLine($"Birthday full format: {birthday}"); // Shows just the date without time, as DateOnly does not include time information since we don't need a time zone for a date only
+*/
+
+// Ask the user their name
+string? name = null;
+Console.Write("Please type your name: ");
+name = Console.ReadLine();
+
+// Ask the user for their birth year and store it in a variable
+int? birthYear = null;
+Console.Write("Please type the year you were born in (YYYY): ");
+birthYear = int.Parse(Console.ReadLine());
+
+// Calculate the user's age
+DateTime today = DateTime.Now;
+string todayString = today.ToString("yyyy");
+int todayInt = int.Parse(todayString);
+int? age = null;
+age = todayInt - birthYear;
+Console.WriteLine($"Hi {name}! Today you are {age} years old.");
