@@ -24,4 +24,14 @@ int birthYear = int.Parse(Console.ReadLine());
 int today = DateTime.Now.Year;
 int age = today - birthYear;
 
-Console.WriteLine($"Hi {name}! Today you are {age} years old.");
+string? year = null;
+
+if (age == 1)
+{
+    year = "year";
+} else if (age >= 2 || age <= 0)
+{
+    year = "years";
+}
+
+Console.WriteLine($"Hi {name}! Today you are {age} {year} old.");
