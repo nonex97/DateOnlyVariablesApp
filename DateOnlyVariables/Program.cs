@@ -13,19 +13,15 @@ Console.WriteLine($"Birthday full format: {birthday}"); // Shows just the date w
 */
 
 // Ask the user their name
-string? name = null;
 Console.Write("Please type your name: ");
-name = Console.ReadLine();
+string name = Console.ReadLine();
 
 // Ask the user for their birth year and store it in a variable
-int? birthYear = null;
 Console.Write("Please type the year you were born in (YYYY): ");
-birthYear = int.Parse(Console.ReadLine());
+int birthYear = int.Parse(Console.ReadLine());
 
 // Calculate the user's age
-DateTime today = DateTime.Now;
-string todayString = today.ToString("yyyy");
-int todayInt = int.Parse(todayString);
-int? age = null;
-age = todayInt - birthYear;
+int today = DateTime.Now.Year;
+int age = today - birthYear;
+
 Console.WriteLine($"Hi {name}! Today you are {age} years old.");
